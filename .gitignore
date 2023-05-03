@@ -1,0 +1,34 @@
+# ignore Visual Studio files
+.vs/
+bin/
+obj/
+*.user
+*.suo
+*.cache
+*.pdb
+
+# ignore build artifacts
+*.dll
+*.exe
+*.log
+*.txt
+*.nupkg
+*.snupkg
+*.tar.gz
+*.zip
+*.rar
+*.7z
+
+# ignore npm packages
+node_modules/
+
+# ignore user-specific files
+*.sln.docstates
+
+# ignore the Mango.Web project
+Mango.Web/bin/
+Mango.Web/obj/
+Mango.Web/wwwroot/lib/
+Mango.Web/appsettings.Development.json
+Mango.Web/appsettings.json
+Mango.Web/Mango.Web.csproj.user
