@@ -32,3 +32,21 @@ Mango.Web/wwwroot/lib/
 Mango.Web/appsettings.Development.json
 Mango.Web/appsettings.json
 Mango.Web/Mango.Web.csproj.user
+
+
+# ignore the Mango.Web project
+Mango.Services.ProductAPI/bin/
+Mango.Web/obj/
+Mango.Web/wwwroot/lib/
+Mango.Web/appsettings.Development.json
+Mango.Web/appsettings.json
+Mango.Web/Mango.Web.csproj.user
+
+
+# ignore the Mango.Services.ProductAPI project
+Mango.Services.ProductAPI/bin/
+Mango.Services.ProductAPI/obj/
+Mango.Services.ProductAPI/wwwroot/lib/
+Mango.Services.ProductAPI/appsettings.Development.json
+Mango.Services.ProductAPI/appsettings.json
+Mango.Services.ProductAPI/Mango.Services.ProductAPI.csproj.user
