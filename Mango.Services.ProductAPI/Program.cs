@@ -1,3 +1,5 @@
+using AutoMapper;
+using Mango.Services.ProductAPI;
 using Mango.Services.ProductAPI.DbContexts;
 using Microsoft.EntityFrameworkCore;
 
@@ -6,9 +8,15 @@ var builder = WebApplication.CreateBuilder(args);
 // source: https://gavilan.blog/2021/08/19/getting-the-iconfiguration-in-the-program-class-asp-net-core-6/
 var configuration = builder.Configuration;
 
+IMapper mapper = MappingConfigs.RegisterMaps().CreateMapper();
+
 // Add services to the container.
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
 options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
+
+//adding the auto mapper configs
+builder.Services.AddSingleton(mapper);
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
