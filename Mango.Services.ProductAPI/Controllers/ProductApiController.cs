@@ -37,5 +37,87 @@ namespace Mango.Services.ProductAPI.Controllers
             return _response;
         }
 
+        [HttpGet]
+        [Route("{id}")]
+        public async Task<object> Get(int id)
+        {
+            try
+            {
+
+                ProductDto productDto = await _productRepository.GetProduct(id);
+                _response.isSuccess = true;
+                _response.Result = productDto;
+            }
+            catch (Exception ex)
+            {
+
+                _response.isSuccess = false;
+                _response.ErrorMessages
+                    = new List<string> { ex.Message };
+            }
+            return _response;
+        }
+
+        [HttpPost]
+        public async Task<object> Post([FromBody] ProductDto product)
+        {
+            try
+            {
+
+                ProductDto createdProduct = await _productRepository.CreateUpdateProduct(product);
+                _response.isSuccess = true;
+                _response.Result = createdProduct;
+            }
+            catch (Exception ex)
+            {
+
+                _response.isSuccess = false;
+                _response.ErrorMessages
+                    = new List<string> { ex.Message };
+            }
+            return _response;
+        }
+
+        [HttpPut]
+        public async Task<object> Put([FromBody] ProductDto product)
+        {
+            try
+            {
+
+                ProductDto updatedProduct = await _productRepository.CreateUpdateProduct(product);
+                _response.isSuccess = true;
+                _response.Result = updatedProduct;
+            }
+            catch (Exception ex)
+            {
+
+                _response.isSuccess = false;
+                _response.ErrorMessages
+                    = new List<string> { ex.Message };
+            }
+            return _response;
+        }
+
+        [HttpDelete]
+        [Route("{id}")]
+        public async Task<object> Delete(int id)
+        {
+            try
+            {
+
+                bool deleteResponse = await _productRepository.DeleteProduct(id);
+                _response.isSuccess = true;
+                _response.Result = deleteResponse;
+            }
+            catch (Exception ex)
+            {
+
+                _response.isSuccess = false;
+                _response.ErrorMessages
+                    = new List<string> { ex.Message };
+            }
+            return _response;
+        }
+
     }
 }
