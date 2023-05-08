@@ -2,6 +2,9 @@ version: '3.9'
 services:
   db:
     image: mcr.microsoft.com/mssql/server:2019-latest
+    volumes:
+      #- ./data:/var/lib/mssql
+      - ./data:/var/opt/mssql/data
     environment:
       SA_PASSWORD: "YourStrong!Passw0rd"
       ACCEPT_EULA: "Y"

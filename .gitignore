@@ -51,3 +51,6 @@ Mango.Services.ProductAPI/Migrations/
 #Mango.Services.ProductAPI/appsettings.Development.json
 #Mango.Services.ProductAPI/appsettings.json
 Mango.Services.ProductAPI/Mango.Services.ProductAPI.csproj.user
+
+#Docker data file for local Development
+docker/data/*
