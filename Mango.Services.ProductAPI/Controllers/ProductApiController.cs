@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Mango.Services.ProductAPI.Controllers
 {
     [ApiController]
-    [Route("api/")]
+    [Route("api/products")]
     public class ProductApiController : ControllerBase
     {
         protected ResponseDto _response;
